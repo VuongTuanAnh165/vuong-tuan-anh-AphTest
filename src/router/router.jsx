@@ -16,7 +16,8 @@ export const router = createBrowserRouter(
     <Route element={<App />}>
       <Route path="/" element={<Main />}>
         <Route path="all-product" element={<AllProduct />} />
-        <Route path="category" element={<Category />} />
+        {/* Ly do thay doi: route category can nhan full dynamic path tu API link /category/... */}
+        <Route path="category/*" element={<Category />} />
         <Route path="search" element={<SearchScreen />} />
         <Route path="product/:url" element={<ProductDetail />} />
       </Route>

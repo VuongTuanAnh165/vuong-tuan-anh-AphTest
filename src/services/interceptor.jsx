@@ -32,7 +32,9 @@ axiosClient.interceptors.response.use(
         placement: "bottomRight",
       });
     }
-    return response.data.result;
+    // Ly do thay doi: fake API Laravel tra ve data phang, khong co data.result nhu ABP.
+    // Dong nay giu tuong thich nguoc voi response cu (data.result) va response moi (data).
+    return response?.data?.result ?? response?.data;
   },
   (error) => {
     if (
@@ -87,7 +89,10 @@ axiosClient.interceptors.response.use(
     }
 
     if (error && error.response && error.response.data) {
-      throw error.response.data;
+      throw {
+        ...error.response.data,
+        status: error.response.status,
+      };
     }
     throw error;
   }

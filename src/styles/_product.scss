@@ -256,74 +256,127 @@
 
 .dynamism-nib {
   background: #17479e;
-  padding: 60px 0;
+  padding: 72px 0 64px;
 
   .title-home {
     color: #fff;
+    letter-spacing: 0.02em;
   }
 
   ._0odn {
     max-width: 1320px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    // Ly do dieu chinh: giu nguyen layout HTML hien co, chi nang cap visual card market.
+    ._3iwp {
+      flex: 1 1 calc((100% - 48px) / 3);
+      min-width: 280px;
+    }
 
     ._3iwp ._8ahh {
       position: relative;
+      display: block;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 14px 28px rgba(10, 23, 53, 0.24);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
 
       ._4rfh {
         border-radius: 22px;
         overflow: hidden;
         position: relative;
 
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            90deg,
+            rgba(245, 248, 255, 0.9) 0%,
+            rgba(245, 248, 255, 0.45) 33%,
+            rgba(245, 248, 255, 0.05) 62%,
+            rgba(245, 248, 255, 0) 100%
+          );
+          pointer-events: none;
+        }
+
         ._5mgw {
           aspect-ratio: 18/9;
           object-fit: cover;
+          width: 100%;
+          display: block;
+          transition: transform 0.6s ease;
         }
       }
 
       ._1blc {
         position: absolute;
         height: 100%;
-        width: 50%;
+        width: 55%;
         left: 0;
         top: 0;
-        padding: 20px;
+        padding: 24px 22px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-image: linear-gradient(to right, #fff, #fff0);
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0.82),
+          rgba(255, 255, 255, 0)
+        );
         border-radius: 22px;
         overflow: hidden;
 
         ._9wvo {
           color: var(--Blue-800, #1e246e);
           font-family: Unbounded;
-          font-size: 20px;
+          font-size: clamp(19px, 1.35vw, 22px);
           font-style: normal;
           font-weight: 600;
-          line-height: normal;
+          line-height: 1.18;
           text-transform: uppercase;
+          letter-spacing: 0.01em;
+          text-wrap: balance;
+          max-width: 11ch;
         }
 
         ._4jqn {
-          width: 54px;
+          width: 62px;
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 40px;
+          height: 48px;
           border: 1px solid #118e55;
           color: #118e55;
           border-radius: 50px;
+          background: rgba(255, 255, 255, 0.75);
+          backdrop-filter: blur(2px);
+          transition: all 0.35s ease;
+
+          svg {
+            font-size: 19px;
+          }
         }
       }
 
       &.has-hover:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 36px rgba(7, 18, 43, 0.32);
+
+        ._5mgw {
+          transform: scale(1.04);
+        }
+
         ._4jqn {
           color: #fff;
-          transition: filter 0.6s, opacity 0.6s, transform 0.6s, box-shadow 0.3s;
           background: var(
             --Linear-1,
             linear-gradient(90deg, #008356 0%, #52a949 100%)
           );
+          border-color: transparent;
         }
       }
     }
@@ -366,20 +419,156 @@
 
 .fumed-ref {
   background: #f6f7ef;
-  padding: 30px 0;
+  padding: 30px 0 18px;
 
   ._5tcj {
     max-width: 1320px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+
+    ._6npx {
+      min-width: 0;
+    }
+
+    ._2jjl {
+      display: flex;
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(30, 36, 110, 0.08);
+      box-shadow: 0 8px 20px rgba(31, 44, 79, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(31, 44, 79, 0.12);
+      }
+
+      ._8ghs {
+        width: 48%;
+      }
+
+      ._0cac {
+        width: 52%;
+        padding: 18px 16px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      ._9rtu {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
+        object-fit: cover;
+      }
+    }
   }
 }
 
 .zeros-vug {
   background: #f6f7ef;
+  padding-bottom: 34px;
 
   ._5msj {
     max-width: 1320px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+
+    ._4euo {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid rgba(30, 36, 110, 0.08);
+      box-shadow: 0 8px 20px rgba(31, 44, 79, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(31, 44, 79, 0.12);
+      }
+
+      ._1qlp {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        aspect-ratio: 1.2;
+      }
+
+      ._3pxh {
+        padding: 14px 14px 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .dynamism-nib ._0odn ._3iwp {
+    flex: 1 1 calc((100% - 24px) / 2);
+  }
+
+  .zeros-vug ._5msj {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 991px) {
+  .fumed-ref ._5tcj {
+    grid-template-columns: 1fr;
+
+    ._2jjl {
+      flex-direction: column;
+
+      ._8ghs,
+      ._0cac {
+        width: 100%;
+      }
+
+      ._9rtu {
+        min-height: 190px;
+      }
+    }
+  }
+
+  .zeros-vug ._5msj {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .dynamism-nib {
+    padding: 54px 0 48px;
+
+    ._0odn {
+      gap: 16px;
+
+      ._3iwp {
+        flex-basis: 100%;
+        min-width: 0;
+      }
+
+      ._3iwp ._8ahh ._1blc {
+        width: 68%;
+        padding: 18px;
+
+        ._9wvo {
+          font-size: 18px;
+        }
+
+        ._4jqn {
+          width: 56px;
+          height: 44px;
+        }
+      }
+    }
+  }
+
+  .zeros-vug ._5msj {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -934,3 +1123,4 @@
     }
   }
 }
+
